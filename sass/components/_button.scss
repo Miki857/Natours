@@ -1,0 +1,174 @@
+.button{
+    text-transform: uppercase;
+    position: relative;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    padding: 1rem 1.5rem;
+
+    &, &::after{
+        border-radius: 1.5rem;
+    }
+
+    /* EL EFECTO HOVER */
+    &::after{
+        /* Creamos el boton */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: white;
+
+        /* Lo ponemos detras */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        transition: all 0.3s ease-in-out;
+
+        /* OJO: al ponerle posicion absoluta, tomara como referencia al contenedor de button, para que use al propio button tenemos que cambiarlo a relative(osea al button). */
+    }
+
+    /* Ahora indicamos la animacion */
+    &:hover::after{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.btn--cta{
+    text-transform: uppercase;
+    position: relative;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    background-color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    color: black;
+    text-decoration: none;
+
+    /* EL EFECTO HOVER */
+    &::after{
+        /* Creamos el boton */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 2rem;
+
+        /* Lo ponemos detras */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        transition: all 0.3s ease-in-out;
+
+        /* OJO: al ponerle posicion absoluta, tomara como referencia al contenedor de button, para que use al propio button tenemos que cambiarlo a relative(osea al button). */
+    }
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Ahora indicamos la animacion */
+    &:hover::after{
+        transform: scale(1.5);
+        background-color: white;
+        opacity: 0;
+    }
+}
+
+.btn--green{
+    text-transform: uppercase;
+    position: relative;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    background-color: #00d200;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.6rem;
+
+    /* EL EFECTO HOVER */
+    &::after{
+        /* Creamos el boton */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #00d200;
+        border-radius: 2rem;
+
+        /* Lo ponemos detras */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        transition: all 0.3s ease-in-out;
+
+        /* OJO: al ponerle posicion absoluta, tomara como referencia al contenedor de button, para que use al propio button tenemos que cambiarlo a relative(osea al button). */
+    }
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Ahora indicamos la animacion */
+    &:hover::after{
+        transform: scale(1.5);
+        background-color: #00d200;
+        opacity: 0;
+    }
+}
+
+.btn-text{
+    text-transform: uppercase;
+    position: relative;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px $color-dark-green;
+    color: $color-dark-green;
+    padding: 0.8rem 1.6rem;
+    
+
+    /* EL EFECTO HOVER */
+    &::after{
+        /* Creamos el boton */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+
+        /* Lo ponemos detras */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        transition: all 0.3s ease-in-out;
+
+        /* OJO: al ponerle posicion absoluta, tomara como referencia al contenedor de button, para que use al propio button tenemos que cambiarlo a relative(osea al button). */
+    }
+
+    &:hover{
+        transform: translateY(-3px);
+        background-color: #00d200;
+        color: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Ahora indicamos la animacion */
+    &:hover::after{
+        transform: scale(1.5);
+        background-color: #00d200;
+        opacity: 0;
+    }
+}

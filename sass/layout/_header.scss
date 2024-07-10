@@ -1,0 +1,130 @@
+.header{
+    height: 85vh;//Si el navegador no soporta el clip-path, hay que reducirlo para que se vea mas estetico.
+
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-light-green, 0.8),
+        rgba($color-dark-green, 0.8)), 
+        url("./src/components/img/hero-small.jpg");
+    background-position: top;
+    background-size: cover;
+    z-index: 1;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+        /* EFECTO DE CORTE EN EL INFERIOR */
+        /*    Esquinas: sup.Iz   sup.Dr   inf.Dr  inf.Iz*/
+        /*                 x y   x   y   x    y   x  y */
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 100%);
+        height: 95vh;
+    }
+
+    @include respond-tablet(){
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-light-green, 0.8),
+            rgba($color-dark-green, 0.8)), 
+            url("./src/components/img/hero.jpg");
+    }
+
+    &__logo{
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+
+        img{
+            height: 3rem;
+            aspect-ratio: 2;
+        }
+    }
+
+    /* HEADING PRIMARY */
+    &__textBox{
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        .headingPrimary{
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+    
+            &__main{
+                display: block;
+                font-size: $font-size-big;
+                font-weight: 400;
+                letter-spacing: 15px;
+
+                animation-name: moveInLeft;
+                animation-duration: 1s;
+
+                /*
+                •animation-delay: #s; Tiempo a esperar para que se ejecute la animación.
+                •animation-iteration-count: #; Cuantas veces se ejecutara la animacion.
+                •animation-timing-functoin: ease-in; Ejecuta la animacion lenta al principio luego agarra velocidad. 
+
+                ATENCION: 
+                Puede que la animacion tenga algun "shake", no se sabe porque ocurre, pero se puede amortiguar con backface-visibility: hidden;
+                 */
+            }
+    
+            &__sub{
+                display: block;
+                font-size: $font-size-default;
+                font-weight: 700;
+                letter-spacing: .65rem;
+
+                animation-name: moveInRight;
+                animation-duration: 1s;
+            }
+        }
+    }
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    80%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

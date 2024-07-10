@@ -1,0 +1,217 @@
+.tour__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+
+    @include respond-tablet-landscape(){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .tour-card__container{
+        width: 90%;
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        overflow: hidden;
+        height: 65rem;
+
+        @include respond-tablet(){
+            width: 60%;
+            height: 35rem;
+        }
+
+        @include respond-tablet-landscape(){
+            width: 30%;
+            height: 30rem;
+        }
+
+        @include respond-desktop(){
+            width: 20rem;
+        }
+
+        .tour-card{
+            background-color: red;
+            transform-style: preserve-3d;
+            box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: .4);
+            height: 100%;
+    
+            .card__side{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+
+                .card__picture{
+                    height: 40%;
+                    background-position: center;
+                    background-size: cover;
+                    background-blend-mode: color;
+                    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+                    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+                    
+                    &-1{
+                        background-image: linear-gradient(
+                            to right bottom, 
+                            $color-secondary-light,
+                            $color-secondary-dark), 
+                            url("../../src/components/img/nat-5.jpg");
+                    }
+
+                    &-2{
+                        background-image: linear-gradient(
+                            to right bottom, 
+                            $color-light-green,
+                            $color-dark-green), 
+                            url("../../src/components/img/nat-6.jpg");
+                    }
+
+                    &-3{
+                        background-image: linear-gradient(
+                            to right bottom, 
+                            $color-tertiary-light,
+                            $color-tertiary-dark), 
+                            url("../../src/components/img/nat-5.jpg");
+                    }
+
+                }
+
+                .card__title{
+                    font-size: $font-size-big;
+                    text-transform: uppercase;
+                    color: $color-white;
+                    position: absolute;
+                    right: 0;
+                    top: 30%;
+                    font-weight: 300;
+                    max-width: 60%;
+
+                    span{
+                        padding: 1rem .5rem;
+
+                        @include respond-tablet-landscape(){
+                            padding: .6rem;
+                        }
+                    }
+
+                    @include respond-tablet(){
+                        font-size: $font-size-default;
+                        max-width: 70%;
+                    }
+
+                    @include respond-tablet-landscape(){
+                        font-size: $font-size-default;
+                        max-width: 60%;
+                    }
+
+                    &-1{
+
+                        span{
+                            background-image: linear-gradient(
+                                to right bottom, 
+                                rgba($color-secondary-light, 0.8),
+                                rgba($color-secondary-dark, 0.8));
+                        }
+                    }
+
+                    &-2{
+
+                        span{
+                            background-image: linear-gradient(
+                                to right bottom, 
+                                rgba($color-light-green, 0.8),
+                                rgba($color-dark-green, 0.8));
+                        }
+                    }
+
+                    &-3{
+
+                        span{
+                            background-image: linear-gradient(
+                                to right bottom, 
+                                rgba($color-tertiary-light, 0.8),
+                                rgba($color-tertiary-dark, 0.8));
+                        }
+                    }
+                }
+
+                .card__details{
+                    height: 60%;
+
+                    ul{
+                        list-style: none;
+                        width: 80%;
+                    }
+
+                    li{
+                        text-align: center;
+                        padding-bottom: 1rem;
+
+                        @include respond-tablet-landscape(){
+                            padding-bottom: .6rem;
+                        }
+                    }
+
+                    li:not(:last-child){
+                        margin-bottom: 1rem;
+                        border-bottom: solid rgb(199, 199, 199) 1px;
+
+                        @include respond-tablet-landscape(){
+                            margin-bottom: .6rem;
+                        }
+                    }
+                }
+    
+                &--front{
+                    background-color: white;
+                }
+    
+                &--back{
+                    transform: rotateY(180deg);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .cart__cta{
+                        color: $color-white;
+                    }
+
+                    .cart__price{
+                        text-align: center;
+
+                        &--text{
+                            font-size: $font-size-big;
+                            font-weight: 300;
+                        }
+
+                        &--price{
+                            font-size: $font-size-very-big;
+                            font-weight: 100;
+                        }
+                    }
+    
+                    &-1{
+                        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+                    }
+    
+                    &-2{
+                        background-image: linear-gradient(to right bottom, $color-light-green,  $color-dark-green);
+                    }
+    
+                    &-3{
+                        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+                    }
+                }
+            }
+        }
+        
+        &:hover .tour-card{
+            transform: rotateY(-180deg);
+        }
+    }
+}
