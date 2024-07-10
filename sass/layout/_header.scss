@@ -5,7 +5,7 @@
         to right bottom, 
         rgba($color-light-green, 0.8),
         rgba($color-dark-green, 0.8)), 
-        url("./src/components/img/hero-small.jpg");
+        url("./components/img/hero-small.jpg");
     background-position: top;
     background-size: cover;
     z-index: 1;
@@ -24,7 +24,7 @@
             to right bottom, 
             rgba($color-light-green, 0.8),
             rgba($color-dark-green, 0.8)), 
-            url("./src/components/img/hero.jpg");
+            url("./components/img/hero.jpg");
     }
 
     &__logo{

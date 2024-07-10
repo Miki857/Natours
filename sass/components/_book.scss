@@ -5,7 +5,7 @@
                     transparent 0%,
                     transparent 35%,
                     rgba(255,255,255,0.5) 35%)
-                        ,url("../../src/components/img/nat-10.jpg");
+                        ,url("./components/img/nat-10.jpg");
     background-position: center;
     background-size: cover;
     color: black;
@@ -25,7 +25,7 @@
                         rgba(255,255,255,0.5) 0%,
                         rgba(255,255,255,0.5) 55%,
                         transparent 55%)
-                            ,url("../../src/components/img/nat-10.jpg");
+                            ,url("./components/img/nat-10.jpg");
     }
         
     @include respond-desktop(){
